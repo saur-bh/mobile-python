@@ -1,0 +1,19 @@
+device_name,platform,platform_version,screen_resolution,screen_density,ram_gb,storage_gb,network_type,test_priority,notes
+iPhone 14 Pro,iOS,16.0,1179x2556,460,6,128,5G,high,Latest iPhone model
+iPhone 13,iOS,15.0,1170x2532,460,4,128,5G,high,Popular iPhone model
+iPhone 12,iOS,14.0,1170x2532,460,4,64,4G,medium,Older but common
+iPhone SE,iOS,15.0,750x1334,326,3,64,4G,low,Budget iPhone
+iPad Pro,iOS,16.0,2048x2732,264,8,256,WiFi,medium,Tablet testing
+Samsung Galaxy S23,Android,13,1080x2340,425,8,256,5G,high,Latest Samsung flagship
+Samsung Galaxy S22,Android,12,1080x2340,425,8,128,5G,high,Previous Samsung flagship
+Samsung Galaxy A54,Android,13,1080x2340,403,6,128,5G,medium,Mid-range Samsung
+Google Pixel 7,Android,13,1080x2400,416,8,128,5G,high,Latest Pixel
+Google Pixel 6,Android,12,1080x2400,411,8,128,5G,medium,Previous Pixel
+OnePlus 11,Android,13,1440x3216,525,8,128,5G,medium,OnePlus flagship
+Xiaomi 13,Android,13,1080x2400,419,8,128,5G,medium,Xiaomi flagship
+Huawei P50,Android,11,1228x2700,450,8,256,4G,low,Huawei device
+Nokia G50,Android,11,720x1600,269,4,128,5G,low,Budget Android
+Emulator Pixel 4,Android,11,1080x2280,440,4,64,WiFi,high,Android emulator
+Emulator Nexus 5X,Android,10,1080x1920,424,2,32,WiFi,medium,Older Android emulator
+Simulator iPhone 14,iOS,16.0,1179x2556,460,8,256,WiFi,high,iOS simulator
+Simulator iPad Air,iOS,16.0,1640x2360,264,8,256,WiFi,medium,iPad simulator

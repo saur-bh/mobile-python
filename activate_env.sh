@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Activating Mobile Automation Environment..."
+source "mobile_automation_env/bin/activate"
+echo "Environment activated! You can now run tests."
+echo ""
+echo "Quick commands:"
+echo "  pytest tests/                    - Run all tests"
+echo "  pytest tests/test_login.py       - Run specific test"
+echo "  pytest --html=reports/report.html - Generate HTML report"
+echo ""

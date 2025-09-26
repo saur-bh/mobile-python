@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Device Data Schema",
+  "description": "Schema for validating device configuration test data",
+  "type": "object",
+  "required": ["device_name", "platform", "platform_version"],
+  "properties": {
+    "device_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Name of the device"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["iOS", "Android"],
+      "description": "Mobile platform"
+    },
+    "platform_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "description": "Platform version (e.g., '16.0', '13.1.2')"
+    },
+    "screen_resolution": {
+      "type": "string",
+      "pattern": "^\\d+x\\d+$",
+      "description": "Screen resolution in pixels (e.g., '1080x1920')"
+    },
+    "screen_density": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 1000,
+      "description": "Screen density in DPI"
+    },
+    "ram_gb": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 32,
+      "description": "RAM size in GB"
+    },
+    "storage_gb": {
+      "type": "integer",
+      "minimum": 16,
+      "maximum": 1024,
+      "description": "Storage size in GB"
+    },
+    "network_type": {
+      "type": "string",
+      "enum": ["WiFi", "3G", "4G", "5G"],
+      "description": "Network connectivity type"
+    },
+    "test_priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Priority level for testing on this device"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Additional notes about the device"
+    }
+  },
+  "additionalProperties": false
+}

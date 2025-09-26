@@ -1,0 +1,196 @@
+app_settings:
+  android:
+    package_name: "com.example.mobileapp"
+    activity_name: ".MainActivity"
+    app_version: "2.1.0"
+    min_sdk: 21
+    target_sdk: 33
+    permissions:
+      - "android.permission.CAMERA"
+      - "android.permission.WRITE_EXTERNAL_STORAGE"
+      - "android.permission.ACCESS_FINE_LOCATION"
+    
+  ios:
+    bundle_id: "com.example.mobileapp"
+    app_version: "2.1.0"
+    min_ios_version: "12.0"
+    target_ios_version: "16.0"
+    capabilities:
+      - "camera"
+      - "location"
+      - "push-notifications"
+
+test_data:
+  products:
+    - id: "prod_001"
+      name: "Smartphone Pro"
+      price: 899.99
+      currency: "USD"
+      category: "Electronics"
+      in_stock: true
+      rating: 4.5
+      reviews_count: 1250
+      
+    - id: "prod_002"
+      name: "Wireless Headphones"
+      price: 199.99
+      currency: "USD"
+      category: "Audio"
+      in_stock: true
+      rating: 4.2
+      reviews_count: 890
+      
+    - id: "prod_003"
+      name: "Tablet Ultra"
+      price: 599.99
+      currency: "USD"
+      category: "Electronics"
+      in_stock: false
+      rating: 4.7
+      reviews_count: 567
+
+  search_terms:
+    valid:
+      - "smartphone"
+      - "headphones"
+      - "tablet"
+      - "electronics"
+      - "audio"
+    invalid:
+      - ""
+      - "   "
+      - "!@#$%"
+      - "nonexistentproduct12345"
+    special_characters:
+      - "café"
+      - "naïve"
+      - "résumé"
+      - "北京"
+      - "москва"
+
+  form_data:
+    contact_form:
+      valid:
+        name: "John Doe"
+        email: "john.doe@example.com"
+        phone: "+1-555-123-4567"
+        subject: "Product Inquiry"
+        message: "I would like to know more about your products."
+      invalid:
+        name: ""
+        email: "invalid-email"
+        phone: "123"
+        subject: ""
+        message: ""
+
+  navigation:
+    main_menu:
+      - "Home"
+      - "Products"
+      - "Categories"
+      - "Search"
+      - "Cart"
+      - "Profile"
+      - "Settings"
+    
+    categories:
+      - "Electronics"
+      - "Audio"
+      - "Accessories"
+      - "Home & Garden"
+      - "Sports"
+      - "Books"
+
+  ui_elements:
+    timeouts:
+      short: 5
+      medium: 10
+      long: 30
+      extra_long: 60
+    
+    gestures:
+      swipe_duration: 1000
+      tap_duration: 100
+      long_press_duration: 2000
+      pinch_scale_factor: 0.5
+
+  localization:
+    languages:
+      - code: "en"
+        name: "English"
+        currency: "USD"
+        date_format: "MM/dd/yyyy"
+      - code: "es"
+        name: "Spanish"
+        currency: "EUR"
+        date_format: "dd/MM/yyyy"
+      - code: "fr"
+        name: "French"
+        currency: "EUR"
+        date_format: "dd/MM/yyyy"
+      - code: "de"
+        name: "German"
+        currency: "EUR"
+        date_format: "dd.MM.yyyy"
+
+  test_scenarios:
+    checkout_flow:
+      - step: "add_to_cart"
+        product_id: "prod_001"
+        quantity: 1
+      - step: "view_cart"
+        expected_items: 1
+      - step: "proceed_to_checkout"
+        login_required: true
+      - step: "enter_shipping_info"
+        address: "123 Main St, Anytown, USA 12345"
+      - step: "select_payment_method"
+        method: "credit_card"
+      - step: "complete_order"
+        expected_confirmation: true
+
+    user_registration:
+      - step: "open_registration"
+        page: "signup"
+      - step: "fill_personal_info"
+        first_name: "Test"
+        last_name: "User"
+        email: "testuser@example.com"
+      - step: "set_password"
+        password: "SecurePass123!"
+        confirm_password: "SecurePass123!"
+      - step: "accept_terms"
+        terms_accepted: true
+      - step: "submit_registration"
+        expected_result: "success"
+
+performance_benchmarks:
+  page_load_times:
+    home_page: 3.0
+    product_list: 5.0
+    product_detail: 4.0
+    search_results: 6.0
+    checkout: 8.0
+  
+  api_response_times:
+    login: 2.0
+    search: 3.0
+    add_to_cart: 1.5
+    checkout: 5.0
+
+error_messages:
+  validation:
+    required_field: "This field is required"
+    invalid_email: "Please enter a valid email address"
+    password_too_short: "Password must be at least 8 characters"
+    passwords_dont_match: "Passwords do not match"
+  
+  network:
+    connection_error: "Unable to connect to server"
+    timeout_error: "Request timed out"
+    server_error: "Internal server error"
+  
+  authentication:
+    invalid_credentials: "Invalid username or password"
+    account_locked: "Account has been locked"
+    session_expired: "Your session has expired"

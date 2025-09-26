@@ -1,0 +1,45 @@
+# Core Appium and Selenium
+appium-python-client>=3.1.1
+selenium>=4.15.2
+webdriver-manager>=4.0.1
+
+# Testing Framework
+pytest>=7.4.3
+pytest-html>=4.1.1
+pytest-xdist>=3.3.1
+pytest-json-report>=1.5.0
+pytest-metadata>=3.0.0
+pytest-rerunfailures>=12.0
+
+# Reporting and Allure
+allure-pytest>=2.13.2
+
+# Configuration and Data Management
+pyyaml>=6.0.1
+jsonschema>=4.20.0
+python-dotenv>=1.0.0
+
+# Logging and Utilities
+loguru>=0.7.2
+colorama>=0.4.6
+rich>=13.7.0
+
+# HTTP and API Testing
+requests>=2.31.0
+
+# Image and Media Processing
+pillow>=10.1.0
+
+# Data Processing
+pandas>=2.1.4
+openpyxl>=3.1.2
+
+# Development and Debugging
+pytest-mock>=3.12.0
+pytest-cov>=4.1.0
+black>=23.12.0
+flake8>=6.1.0
+
+# Performance and Monitoring
+psutil>=5.9.6
+memory-profiler>=0.61.0

@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User Data Schema",
+  "description": "Schema for validating user test data",
+  "type": "object",
+  "required": ["id", "username", "password"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Unique user identifier"
+    },
+    "username": {
+      "type": "string",
+      "format": "email",
+      "description": "User email address used as username"
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "User password with minimum security requirements"
+    },
+    "first_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "User's first name"
+    },
+    "last_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "User's last name"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+?[\\d\\s\\-\\(\\)]{10,}$",
+      "description": "User's phone number in international format"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["standard_user", "admin_user", "premium_user"],
+      "description": "User role determining access permissions"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "blocked", "expired"],
+      "description": "Current status of the user account"
+    },
+    "profile": {
+      "type": "object",
+      "description": "Additional user profile information",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "minimum": 13,
+          "maximum": 120,
+          "description": "User's age"
+        },
+        "country": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO country code"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 5,
+          "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+          "description": "Language code (e.g., 'en', 'en-US')"
+        },
+        "timezone": {
+          "type": "string",
+          "description": "User's timezone"
+        }
+      }
+    },
+    "expected_error": {
+      "type": "string",
+      "description": "Expected error message for invalid users"
+    }
+  },
+  "additionalProperties": false
+}

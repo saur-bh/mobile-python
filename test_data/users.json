@@ -1,0 +1,125 @@
+{
+  "valid_users": [
+    {
+      "id": "user_001",
+      "username": "testuser@example.com",
+      "password": "SecurePass123!",
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone": "+1234567890",
+      "role": "standard_user",
+      "status": "active",
+      "profile": {
+        "age": 30,
+        "country": "US",
+        "language": "en",
+        "timezone": "America/New_York"
+      }
+    },
+    {
+      "id": "user_002",
+      "username": "admin@example.com",
+      "password": "AdminPass456!",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "phone": "+1987654321",
+      "role": "admin_user",
+      "status": "active",
+      "profile": {
+        "age": 35,
+        "country": "CA",
+        "language": "en",
+        "timezone": "America/Toronto"
+      }
+    },
+    {
+      "id": "user_003",
+      "username": "premium@example.com",
+      "password": "PremiumPass789!",
+      "first_name": "Bob",
+      "last_name": "Johnson",
+      "phone": "+1122334455",
+      "role": "premium_user",
+      "status": "active",
+      "profile": {
+        "age": 28,
+        "country": "UK",
+        "language": "en",
+        "timezone": "Europe/London"
+      }
+    }
+  ],
+  "invalid_users": [
+    {
+      "id": "invalid_001",
+      "username": "invalid@example.com",
+      "password": "WrongPassword",
+      "expected_error": "Invalid credentials"
+    },
+    {
+      "id": "invalid_002",
+      "username": "blocked@example.com",
+      "password": "BlockedPass123!",
+      "status": "blocked",
+      "expected_error": "Account blocked"
+    },
+    {
+      "id": "invalid_003",
+      "username": "expired@example.com",
+      "password": "ExpiredPass123!",
+      "status": "expired",
+      "expected_error": "Account expired"
+    }
+  ],
+  "test_scenarios": {
+    "login_validation": [
+      {
+        "scenario": "empty_credentials",
+        "username": "",
+        "password": "",
+        "expected_result": "validation_error"
+      },
+      {
+        "scenario": "empty_username",
+        "username": "",
+        "password": "password123",
+        "expected_result": "validation_error"
+      },
+      {
+        "scenario": "empty_password",
+        "username": "user@example.com",
+        "password": "",
+        "expected_result": "validation_error"
+      },
+      {
+        "scenario": "invalid_email_format",
+        "username": "invalid_email",
+        "password": "password123",
+        "expected_result": "format_error"
+      },
+      {
+        "scenario": "short_password",
+        "username": "user@example.com",
+        "password": "123",
+        "expected_result": "validation_error"
+      }
+    ]
+  },
+  "environment_specific": {
+    "staging": {
+      "base_url": "https://staging.example.com",
+      "api_timeout": 30,
+      "default_user": "user_001"
+    },
+    "production": {
+      "base_url": "https://app.example.com",
+      "api_timeout": 60,
+      "default_user": "user_001"
+    },
+    "development": {
+      "base_url": "https://dev.example.com",
+      "api_timeout": 15,
+      "default_user": "user_001"
+    }
+  }
+}
